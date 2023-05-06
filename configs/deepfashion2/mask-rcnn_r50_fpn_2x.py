@@ -4,7 +4,7 @@ config file for DeepFashion2 Using MaskRCNN
 
 _base_ = [
     "../_base_/models/mask-rcnn_r50_fpn.py",
-    "../_base_/schedules/schedule_1x.py",
+    "../_base_/schedules/schedule_2x.py",
     "../_base_/default_runtime.py",
     "data_pipeline.py",  # custom data pipeline
 ]
