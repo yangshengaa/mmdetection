@@ -3,8 +3,9 @@ data loader and preprocessing pipeline for DeepFashion2
 """
 
 # * dataset root
-data_root = "/n/home02/shengy/course/6_8300/code/data/subset/"
-batch_size = 1
+# data_root = "/n/home02/shengy/course/6_8300/code/data/subset/"  # subset 
+data_root = "/n/pehlevan_lab/Everyone/deepfashion2/raw/"          # full
+batch_size = 32
 
 # =================== info ========================
 backend_args = None
@@ -73,7 +74,7 @@ train_dataloader = dict(
     batch_sampler=dict(type="AspectRatioBatchSampler"),
     dataset=dict(
         type="RepeatDataset",
-        times=2,
+        times=1,
         dataset=dict(
             type=dataset_type,
             data_root=data_root,
