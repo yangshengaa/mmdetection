@@ -5,7 +5,7 @@ data loader and preprocessing pipeline for DeepFashion2
 # * dataset root
 # data_root = "/n/home02/shengy/course/6_8300/code/data/subset/"  # subset 
 data_root = "/n/pehlevan_lab/Everyone/deepfashion2/raw/"          # full
-batch_size = 8
+batch_size = 4
 
 # =================== info ========================
 backend_args = None
@@ -105,7 +105,7 @@ val_dataloader = dict(
     ),
 )
 test_dataloader = dict(
-    batch_size=1,
+    batch_size=2,
     num_workers=2,
     persistent_workers=True,
     drop_last=False,
