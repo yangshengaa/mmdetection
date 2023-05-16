@@ -8,6 +8,6 @@ Based on mmdetection, this folder implements three major instance segmentation m
 - QueryInst
 - Mask2Former
 
-We also share trained weights in the folder [weights](weights).
+Weights are sharable upon requests.
 
 Author: Xiaohan Zhao, Sheng Yang
