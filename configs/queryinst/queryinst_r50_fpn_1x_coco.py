@@ -1,6 +1,7 @@
 _base_ = [
-    '../_base_/datasets/coco_instance.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
+    # '../_base_/datasets/coco_instance.py',
+    # '../_base_/schedules/schedule_1x.py', 
+    '../_base_/default_runtime.py'
 ]
 num_stages = 6
 num_proposals = 100
@@ -131,25 +132,25 @@ model = dict(
     test_cfg=dict(
         rpn=None, rcnn=dict(max_per_img=num_proposals, mask_thr_binary=0.5)))
 
-# optimizer
-optim_wrapper = dict(
-    type='OptimWrapper',
-    optimizer=dict(
-        _delete_=True, type='AdamW', lr=0.0001, weight_decay=0.0001),
-    paramwise_cfg=dict(
-        custom_keys={'backbone': dict(lr_mult=0.1, decay_mult=1.0)}),
-    clip_grad=dict(max_norm=0.1, norm_type=2))
+# # optimizer
+# optim_wrapper = dict(
+#     type='OptimWrapper',
+#     optimizer=dict(
+#         _delete_=True, type='AdamW', lr=0.0001, weight_decay=0.0001),
+#     paramwise_cfg=dict(
+#         custom_keys={'backbone': dict(lr_mult=0.1, decay_mult=1.0)}),
+#     clip_grad=dict(max_norm=0.1, norm_type=2))
 
-# learning rate
-param_scheduler = [
-    dict(
-        type='LinearLR', start_factor=0.001, by_epoch=False, begin=0,
-        end=1000),
-    dict(
-        type='MultiStepLR',
-        begin=0,
-        end=12,
-        by_epoch=True,
-        milestones=[8, 11],
-        gamma=0.1)
-]
+# # learning rate
+# param_scheduler = [
+#     dict(
+#         type='LinearLR', start_factor=0.001, by_epoch=False, begin=0,
+#         end=1000),
+#     dict(
+#         type='MultiStepLR',
+#         begin=0,
+#         end=12,
+#         by_epoch=True,
+#         milestones=[8, 11],
+#         gamma=0.1)
+# ]
